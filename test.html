@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<!--<script src='https://code.responsivevoice.org/responsivevoice.js'></script>-->
+		<script>
+			/* script a appeler pour traduire le text */
+			function speak(text, callback){
+				var u = new SpeechSynthesisUtterance();
+				u.text=text; 
+				u.lang="ja-JP" // ici changer la nationnalité de la voix
+				u.onend = function (){
+					if(callback)
+					callback();
+				};
+				u.onerror = function (e){
+					if(callback)
+					callback(e);
+				};
+				speechSynthesis.speak(u);
+			}
+		</script>
+	</head>
+	<body>
+		<input id="truc" type='text'/>
+		<button onclick='speak(document.getElementById("truc").value);'>Click Me !</button>
+	</body>
+</html>
