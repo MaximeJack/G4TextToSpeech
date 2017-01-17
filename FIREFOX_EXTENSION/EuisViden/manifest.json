@@ -8,11 +8,14 @@
   "icons": {
     "48": "icons/border-48.png"
   },
-
+  "background": { 
+    "scripts":["LoupeBackground.js"],
+    "persistent": true
+   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["Audio.js","Loupe.js","AideNav.js"],
+      "matches": ["http://*/*", "https://*/*" ],
+      "js": ["Audio.js", "Loupe.js", "AideNav.js"],
       "css": ["Ajust.css"]
     }
   ],
