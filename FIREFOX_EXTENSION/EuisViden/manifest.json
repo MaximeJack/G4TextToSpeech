@@ -1,8 +1,8 @@
 {
 
-  "description": "Yolo it's me mario",
+  "description": "Extension pour les malvoyants et non-voyants",
   "manifest_version": 2,
-  "name": "YOLOAPP",
+  "name": "EiusViden",
   "version": "1.0",
   "homepage_url": "https://github.com/MaximeJack/G4TextToSpeech",
   "icons": {
@@ -14,6 +14,11 @@
       "matches": ["<all_urls>"],
       "js": ["borderify.js"]
     }
-  ]
+  ],
+  "browser_action": {
+    "default_icon": "icons/border-48.png",
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
+  }
 
 }

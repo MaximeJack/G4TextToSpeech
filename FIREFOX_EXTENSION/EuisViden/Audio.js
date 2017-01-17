@@ -8,7 +8,7 @@ document.body.addEventListener("load", yolo);
 
 function yolo (argument) {
 	var body = document.body;
-	speak('lis moi ça maggueule');
+	speak('Yamete !');
 }
 
 
