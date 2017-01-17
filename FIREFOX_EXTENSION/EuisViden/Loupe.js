@@ -1,3 +1,11 @@
-/**
- * Created by maxim on 17/01/2017.
- */
+var ACTIVE_LOUPE = false;
+
+
+
+function activeLoupe(){
+    if(ACTIVE_LOUPE){
+        ACTIVE_LOUPE = false;
+    }else{
+        ACTIVE_LOUPE = true;
+    }
+}

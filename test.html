@@ -8,7 +8,7 @@
 			function speak(text, callback){
 				var u = new SpeechSynthesisUtterance();
 				u.text=text; 
-				u.lang="fr-FR"; // ici changer la nationnalit� de la voix
+				u.lang="fr-FR"; // ici changer la nationnalité de la voix
 				u.onend = function (){
 					if(callback)
 					callback();
