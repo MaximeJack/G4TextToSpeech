@@ -1,17 +1,6 @@
 /*
-Just draw a border round the document.body.
+created by maxim
 */
-document.body.style.border = "5px solid red";
-document.body.addEventListener("click", yolo);
-document.body.addEventListener("load", yolo);
-
-
-function yolo (argument) {
-	var body = document.body;
-	speak('Yamete !');
-}
-
-
 function speak(text, callback) {
     var u = new SpeechSynthesisUtterance();
     u.text = text;
@@ -28,4 +17,11 @@ function speak(text, callback) {
         }
     };
     speechSynthesis.speak(u);
+}
+
+var texts = document.getElementsByTagName("P");
+for (var i=0;i<texts.length;i++){
+    texts[i].onclick=function(){
+        speak(this.textContent);
+    };
 }
