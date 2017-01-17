@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa99252c-9f00-4f51-91a2-6150a3858f9d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/AideNav.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/Ajust.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/Loupe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/popup.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/FIREFOX_EXTENSION/borderify/README.md" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/FIREFOX_EXTENSION/borderify/borderify.js" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/Audio.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/FIREFOX_EXTENSION/borderify/icons/LICENSE" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/icons/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/FIREFOX_EXTENSION/borderify/icons/border-48.png" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/icons/border-48.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/FIREFOX_EXTENSION/borderify/manifest.json" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/manifest.json" afterPath="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/manifest.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Audio.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Audio.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/Audio.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -79,6 +71,7 @@
         <option value="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/AideNav.js" />
         <option value="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/popup.html" />
         <option value="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/Audio.js" />
+        <option value="$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/manifest.json" />
       </list>
     </option>
   </component>
@@ -229,18 +222,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1484659753814</updated>
-      <workItem from="1484659755273" duration="564000" />
+      <workItem from="1484659755273" duration="1042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="564000" />
+    <option name="totallyTimeSpent" value="1042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="976" height="1050" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -294,14 +287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/popup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -328,6 +313,14 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIREFOX_EXTENSION/EuisViden/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
