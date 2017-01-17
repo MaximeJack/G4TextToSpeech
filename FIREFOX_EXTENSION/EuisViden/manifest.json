@@ -4,21 +4,17 @@
   "manifest_version": 2,
   "name": "EiusViden",
   "version": "1.0",
-  "homepage_url": "https://github.com/MaximeJack/G4TextToSpeech",
   "icons": {
     "48": "icons/border-48.png"
   },
   "background": { 
-    "scripts":["LoupeBackground.js"],
-    "persistent": true
+    "scripts":["include/jquery/jquery.js", "Loupe/LoupeBackground.js"]
    },
-  "content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*" ],
-      "js": ["Audio.js", "Loupe.js", "AideNav.js"],
-      "css": ["Ajust.css"]
-    }
-  ],
+   "content_scripts": [ {
+    "js": ["include/jquery/jquery.js", "Loupe/LoupeContent.js"],
+    "matches": [ "http://*/*", "https://*/*"]
+  }],
+   "permissions": [ "http://*/*", "https://*/*"],
   "browser_action": {
     "default_icon": "icons/border-48.png",
     "default_popup": "popup.html",
