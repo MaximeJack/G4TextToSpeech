@@ -4,28 +4,29 @@
 
 
 //[type=text]
-
-window.onload=function(argument) {
 	var x = document.body.getElementsByTagName('input');
-	console.log("init avant for");
-	console.log("val x : ".x.length);
-	for (var i = 0; i < x.length; i++) {
-		console.log("init");
-		x[i].oninput=function(){
-			console.log('++');
-			talk(x[i].value);
-		};
+	for (var i = 0; i < x.length; i++){
+		x[i].textRecherche = "";
+		if(x[i].getAttribute('type')=='text' || !x[i].hasAttribute('type'))
+		{	
+			//pour ecrire
+			x[i].onkeypress=function(e){
+				console.log(e);
+				if (e.keyCode == 0){//charactere
+					x[i].textRecherche+=e.key;
+				}
+				if (e.keyCode == 8 && x[i].textRecherche.length > 0){//backspace
+						x[i].textRecherche = x[i].textRecherche.substr(0,x[i].textRecherche.length-1);
+				}
+				// if(e.keyCode == 35)
+				// 	speak(x[i].textRecherche);
+			};
+
+			
+
+		}
 	}
 
-	$('body').load(function(){
-		console.log('yolo sa charge');
-	});
+function talk(obj){
+    speak(obj);
 }
-
-function talk(no){
-	console.log('yo');
-    speak('lo');
-}
-
-
-
