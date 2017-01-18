@@ -1,6 +1,7 @@
 var VARIABLE_GLOBALE = false;
 
 function heheh(i){
+    console.log('ddd');
    if(typeof i !== 'undefined'){
       VARIABLE_GLOBALE = i;  
       console.log(VARIABLE_GLOBALE);
@@ -10,13 +11,10 @@ function heheh(i){
 
 
 chrome.runtime.sendMessage({
-    greeting: "disable"
- }, heheh);
- /*
-chrome.runtime.onMessage.addListener(function (msg, sender, response) {
-    
-});
-*/
+    'type':'global', 
+    'page':'content'
+    }, heheh);
+
 
 $( document ).ready(function() {
     $('*').bind("mousemove", function(event){
@@ -25,7 +23,7 @@ $( document ).ready(function() {
             $(this).css("background-color", 'red');
         }
         
-     });
+    });
 });
 
 
