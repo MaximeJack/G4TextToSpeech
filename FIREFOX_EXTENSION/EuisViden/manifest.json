@@ -11,7 +11,7 @@
     "scripts":["include/jquery/jquery.js", "Loupe/LoupeBackground.js"]
    },
    "content_scripts": [ {
-    "js": ["include/jquery/jquery.js", "Loupe/LoupeContent.js","audio.js","AideNav.js"],
+    "js": ["include/jquery/jquery.js", "include/zoom/jquery.zoom.min.js", "Loupe/LoupeContent.js","audio.js","AideNav.js"],
     "matches": [ "http://*/*", "https://*/*"]
   }],
    "permissions": [ "http://*/*", "https://*/*"],

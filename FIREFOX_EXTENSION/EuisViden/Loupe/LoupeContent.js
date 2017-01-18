@@ -20,7 +20,9 @@ function envoie(){
 $( document ).ready(function() {
     $('*').bind("mousemove", function(event){
         if(VARIABLE_GLOBALE){
-            $(this).css("background-color", 'red');
+           
+        }else{
+            
         }
         
     });
