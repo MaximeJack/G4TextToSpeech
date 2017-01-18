@@ -19,9 +19,14 @@ function speak(text, callback) {
     speechSynthesis.speak(u);
 }
 
-var texts = document.getElementsByTagName("P");
-for (var i=0;i<texts.length;i++){
-    texts[i].onclick=function(){
-        speak(this.textContent);
-    };
+var elemts = document.body.childNodes;
+var texts = "";
+for (var i = 0; i < elemts.length; i++) {
+    if (elemts[i].nodeName != "SCRIPT" && elemts[i].nodeName != "#text" && elemts[i].nodeName != "INPUT") {
+        console.log(elemts[i]);
+        texts += elemts[i].textContent;
+        elemts[i].onclick=speak(elemts[i].textContent);
+    }
 }
+console.log(texts);
+speak(texts);
