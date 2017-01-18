@@ -19,15 +19,11 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     
     //method popup
     if(typeScript=='content'){
-        sendResponse(LOUPE_ACTIVER); 
-        OBJET.content = sendResponse;
+        sendResponse(LOUPE_ACTIVER);
     //method 
     }else if(typeScript=='pop'){
         sendResponse(LOUPE_ACTIVER);
-        if(OBJET.content!=null){
-            OBJET.content(LOUPE_ACTIVER);
-            console.log(OBJET);
-        }
+        
     }
     
 });
