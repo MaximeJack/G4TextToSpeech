@@ -27,9 +27,9 @@
             /*cursor: none;*/
             width:      '150px',
             height:     '150px',
-            background: 'url("' + cursorPicUrl + '") no-repeat left top',
             position:   'absolute',
             display:    'none',
+            'border': '1px solid #000',
             'z-index':  '10000'
         }).addClass("CURSOR_ZOOM_EXTENSION");
 
