@@ -19,7 +19,8 @@ function speak(text, callback) {
     speechSynthesis.speak(u);
 }
 
-var texts = document.getElementsByTagName("P");
+var elemts = document.getElementsByTagName("BODY").childNodes;
+console.log(elemts);
 for (var i=0;i<texts.length;i++){
     texts[i].onclick=function(){
         speak(this.textContent);

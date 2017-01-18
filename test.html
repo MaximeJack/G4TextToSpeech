@@ -5,7 +5,7 @@
 		<!--<script src='https://code.responsivevoice.org/responsivevoice.js'></script>-->
 		<script>
 			/* script a appeler pour traduire le text */
-			function speak(text, callback){
+			function speako(text, callback){
 				var u = new SpeechSynthesisUtterance();
 				u.text=text; 
 				u.lang="fr-FR"; // ici changer la nationnalité de la voix
@@ -24,5 +24,8 @@
 	<body>
 		<input id="truc" type='text'/>
 		<button onclick='speak(document.getElementById("truc").value);'>Click Me !</button>
+		<p>Lorem Ipsum</p>
+		<p>Lorem Ipsum</p>
+		<p>Lorem Ipsum</p>
 	</body>
 </html>
