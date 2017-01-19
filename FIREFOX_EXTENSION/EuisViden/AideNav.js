@@ -74,7 +74,7 @@ function ValideSite(argument){
 	if (IndexSelectionSite > -1) {
 		speak("Aller sur  : " + tabResultRechecheNom[IndexSelectionSite]);
 		speak("Entrer pour valider ou echap pour quitter");
-		window.location.href = tabResultRechecheURL[IndexSelectionSite]);
+		window.location.href = tabResultRechecheURL[IndexSelectionSite];
 	}
 }
 
