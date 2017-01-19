@@ -3,27 +3,6 @@
  
 */
 
-function speak(text, callback){
-    //speechSynthesis.cancel();
-    var u = new SpeechSynthesisUtterance();
-    u.text = text;
-    u.lang ='fr-FR';
-
-    u.onend = function () {
-        if (callback) {
-            callback();
-        }
-    };
-    u.onerror = function (e) {
-        if (callback) {
-            callback(e);
-        }
-    };
-    speechSynthesis.speak(u);
-    //speechSynthesis.cancel();
-
-}
-
 var IndexSelectionSite = -1;
 var tabResultRechecheNom = new Array();
 var tabResultRechecheURL = new Array();
@@ -41,10 +20,8 @@ if (IsGoogle && IsFisrtPage) {
 
 }
 if (IsGoogle && !IsFisrtPage) {
-
 	speak('Pour lancer une nouvelle recherche appuyer sur F2');
 	GetRes();
-	AfficheRES();
 }
 
 
@@ -106,7 +83,7 @@ function LireNomSite(argument) {
 
 function ValideSite(argument){
 	if (IndexSelectionSite > -1) {
-		speak("Aller sur  : " + tabResultRechecheNom[IndexSelectionSite]+"Entrer pour valider ou echap pour quitter");
+		speak("Aller sur  : " + tabResultRechecheNom[IndexSelectionSite]+" Entrer pour valider ou echap pour quitter.");
 		if (confirm('Confirmer ?'))
 			window.location.href = tabResultRechecheURL[IndexSelectionSite];
 	}

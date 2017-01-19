@@ -4,7 +4,7 @@
 */
 
 function speak(text, callback){
-    //speechSynthesis.cancel();
+    
     var u = new SpeechSynthesisUtterance();
     u.text = text;
     u.lang ='fr-FR';
@@ -20,7 +20,10 @@ function speak(text, callback){
         }
     };
     speechSynthesis.speak(u);
-    speechSynthesis.cancel();
+
+    //bug de lecture sur chrome non resolu
+    if (navigator.userAgent.indexOf('chrome')>-1)
+        speechSynthesis.cancel();
 
 }
 
@@ -34,7 +37,6 @@ function speak(text, callback){
 // }
 // console.log(texts);
 // speak(texts);
-
 
 
 /*
@@ -55,3 +57,5 @@ u.onend = function (event) {
 };
 
 speechSynthesis.speak(u);
+
+*/
