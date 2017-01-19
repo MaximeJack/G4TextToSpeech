@@ -3,12 +3,13 @@
  
 */
 
+
 var IndexSelectionSite = -1;
 var tabResultRechecheNom = new Array();
 var tabResultRechecheURL = new Array();
 
 
-var IsGoogle =window.location.href.indexOf("://www.google.fr/")>-1;
+var IsGoogle =window.location.href.indexOf("://www.google.")>-1;
 var IsFisrtPage = (window.location.href.indexOf("#q=") < 0) && (window.location.href.indexOf("?q=") < 0);
 
 raccourci();
@@ -26,23 +27,40 @@ if (IsGoogle && !IsFisrtPage) {
 }
 
 function raccourci() {
+
 	document.onkeypress = function(e){
+		// e.preventDefault();
 		console.log(e);
 		//Retour page suivante
-		if (true) {};
-		if (e.keyCode == 33) {/*PageUp*/ javascript:history.forward();}
-		//Retour page precedente
-		if (e.keyCode == 34) {/*PageDown*/ javascript:history.back();}
-		//Affiche Prompt 
-		if (e.keyCode == 113) {/*F2*/ AffichePrompt();}
-		//Selection site suivant
-		if (e.keyCode == 40) {/*fleche du bas*/SelectionSite(1); LireNomSite();}
-		//Selection site precedant
-		if (e.keyCode == 38) {/*fleche du haut*/SelectionSite(-1); LireNomSite();}
-		//Valide Selection Site
-		if (e.keyCode == 39) {/*fleche de droite*/ ValideSite();}
-		//lire la selection
-		if (e.keyCode == 39) {/*fleche de gauche*/ ValideSite();}
+		if (navigator.userAgent.indexOf('OPR')>-1) {//opera
+			console.log('opera');
+
+		}else if(navigator.userAgent.indexOf('Safari')>-1){//chrome
+			console.log('chrome');
+		}else{//mozilla
+			console.log('firefox');
+			if (e.keyCode == 33) {/*PageUp*/ javascript:history.forward();}
+			//Retour page precedente
+			if (e.keyCode == 34) {/*PageDown*/ javascript:history.back();}
+			//Affiche Prompt 
+			if (e.keyCode == 113) {/*F2*/ AffichePrompt();}
+
+			//Selection site suivant
+			if(e.keyCode == 38){/*fleche haut*/
+				console.log('suiv');
+				SelectionSite(1); 
+				LireNomSite();
+				e.preventDefault();
+			}
+			//Selection site precedant
+			if(e.keyCode == 40){console.log('prec');/*fleche du bas*/SelectionSite(-1); LireNomSite();e.preventDefault();}
+
+				//Valide Selection Site
+			if (e.keyCode == 39) {/*fleche de droite*/ValideSite();}
+			//lire la selection
+			if (e.keyCode == 37) {/*fleche de gauche*/ LireNomSite();}
+			
+		}
 	}
 }
 
@@ -55,7 +73,7 @@ function AffichePrompt(){
 		StopSpeak();
 		speak("Votre recherche est : " + rech +". Entrer pour valider ou echap pour quitter");
 		if(confirm('Confirmer ?')){
-			window.location.href = 'https://www.google.fr/search?q='+rech;
+			window.location.href = 'https://www.google.com/search?q='+rech;
 		}
 	}else{
 		StopSpeak();
@@ -79,6 +97,7 @@ function SelectionSite(val) {
 
 function LireNomSite(argument) {
 	if (IndexSelectionSite > -1) {
+		StopSpeak();
 		console.log(tabResultRechecheURL[IndexSelectionSite]);
 		speak("Site : " + tabResultRechecheNom[IndexSelectionSite]);
 	}
