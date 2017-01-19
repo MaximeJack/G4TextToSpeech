@@ -19,7 +19,8 @@ function speak(text, callback) {
         }
     };
     speechSynthesis.speak(u);
-    speechSynthesis.cancel();
+    console.log(navigator.userAgent);
+    if(navigator.userAgent.indexOf('CHROME')>1) speechSynthesis.cancel();
 }
 
 var elemts = document.body.childNodes;

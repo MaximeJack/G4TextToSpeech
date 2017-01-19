@@ -37,8 +37,7 @@ function AffichePrompt(){
 		}
 	}else{
 		speak("Modifier votre recherche ? Appuyer sur Entrer pour valider ou echap pour quitter")
-		var verif = confirm('Confirmer ?');
-		if(verif){
+		if(confirm('Confirmer ?')){
 			AffichePrompt();		
 		}
 	}
