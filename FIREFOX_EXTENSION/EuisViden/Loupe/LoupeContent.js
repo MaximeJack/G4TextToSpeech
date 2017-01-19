@@ -15,6 +15,10 @@ function envoie(){
     }, heheh);  
 }
 
+function removeClassZoom(){
+    $('*').removeClass('zoom-extension');
+    $('*').children().removeClass('zoom-extension-child');
+}
 
 
 $( document ).ready(function() {
@@ -22,37 +26,18 @@ $( document ).ready(function() {
     var y;
     $('*:last-child').bind("mousemove", function(event){
         if(VARIABLE_GLOBALE){
-           $('*').removeClass('zoom-extension');
+           removeClassZoom();
            var target = $(event.target);
-           if(target.is( ":input" ) || target.is( "p" ) || target.is( "a" ) || target.is( "span" ) || target.is('pre') || target.is( "img" )){
+           if(target.is( ":input" ) || target.is( "p" )  || target.is( "cite" ) || target.is( "a" ) || target.is( "span" ) || target.is('pre') || target.is( "img" )){
                target.addClass('zoom-extension');
+               target.children().addClass('zoom-extension-child');
            }
            console.log(target.prop("tagName"));
         }else{
-            $('*').removeClass('zoom-extension');
+            removeClassZoom()
         }
         
     });
-    /*
-    $('*').bind("click", function(event){
-        if(VARIABLE_GLOBALE){
-            html2canvas(document.body, {
-                
-                onrendered: function(canvas) {
-
-                     $(".CURSOR_ZOOM_EXTENSION").text('');
-                    $(".CURSOR_ZOOM_EXTENSION").append(canvas)
-                            .css({
-                                'background-position':x+'px'+y+'px',
-                                'display':'none'
-                            });
-                    // Clean up 
-                    //document.body.removeChild(canvas);
-                }
-            });
-        }
-    });
-    */
 });
 
 

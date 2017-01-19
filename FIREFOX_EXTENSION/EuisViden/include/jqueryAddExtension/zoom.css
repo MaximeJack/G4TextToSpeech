@@ -1,8 +1,9 @@
 .zoom-extension {
-    position:absolute;
+    text-decoration: none;
+    display: block;
     background-color:#000;
     color:#FFF;
-    z-index: 1000;
+    z-index:100000000;
     -webkit-transition: all 200ms ease-in;
     -webkit-transform: scale(1.5);
     -ms-transition: all 200ms ease-in;
@@ -12,4 +13,26 @@
     transition: all 200ms ease-in;
     transform: scale(1.5);
     
+}
+a.zoom-extension{
+    text-decoration: none;
+    color:#FFF;
+}
+a.zoom-extension:active{
+    text-decoration: none;
+    color:#FFF;
+}
+a.zoom-extension:link{
+    text-decoration: none;
+    color:#FFF;
+}
+a.zoom-extension:hover{
+    text-decoration: none;
+    color:#FFF;
+}
+
+
+
+.zoom-extension-child{
+    color:#FFF;
 }
