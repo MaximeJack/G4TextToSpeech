@@ -1,11 +1,10 @@
-/**
- * Created by maxim on 17/01/2017.
- 
-*/
 
-function StopSpeak(argument) {
+
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor); //détecte si c'est chrome
+function stopSpeak() {
     speechSynthesis.cancel();
 }
+
 
 function speak(text, callback){
 
@@ -25,18 +24,25 @@ function speak(text, callback){
         }
     };
     speechSynthesis.speak(u);
+
+    //bug de lecture sur chrome non resolu
+    if (isChrome){
+        //stopSpeak();
+    }
+
+}
+/*
+var elemts = document.body.childNodes;
+var texts = "";
+for (var i = 0; i < elemts.length; i++) {
+    if (elemts[i].nodeName != "SCRIPT" && elemts[i].nodeName != "#text" && elemts[i].nodeName != "INPUT") {
+        texts += elemts[i].textContent;
+        //elemts[i].onclick=speak(elemts[i].textContent);
+    }
 }
 
-// var elemts = document.body.childNodes;
-// var texts = "";
-// for (var i = 0; i < elemts.length; i++) {
-//     if (elemts[i].nodeName != "SCRIPT" && elemts[i].nodeName != "#text" && elemts[i].nodeName != "INPUT") {
-//         texts += elemts[i].textContent;
-//         elemts[i].onclick=speak(elemts[i].textContent);
-//     }
-// }
-// console.log(texts);
-// speak(texts);
+texts = texts.replace(" ", "");
+speak(texts);*/
 
 
 /*

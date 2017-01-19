@@ -22,8 +22,7 @@ function removeClassZoom(){
 
 
 $( document ).ready(function() {
-    var x;
-    var y;
+  
     $('*:last-child').bind("mousemove", function(event){
         if(VARIABLE_GLOBALE){
            removeClassZoom();

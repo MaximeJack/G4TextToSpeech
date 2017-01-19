@@ -1,7 +1,5 @@
-var ACTIVE_LOUPE = false;
-
-function typeButtonLoupe(bool){
-    var d = document.getElementById("btnEiusVidenLoupe");
+function typeButtonAudio(bool){
+    var d = document.getElementById("btnEiusVidenAudio");
     if(bool){
         d.className = "btn btn-danger";
         d.innerHTML = "désactiver";
@@ -13,39 +11,38 @@ function typeButtonLoupe(bool){
     
 }
 
-function activeLoupe(){
-    var d = document.getElementById("btnEiusVidenLoupe");
+
+function activeAudio(){
+    var d = document.getElementById("btnEiusVidenAudio");
 
     if(d.className=="btn btn-danger"){
         ACTIVE_LOUPE = false;
         d.className = "btn btn-success";
         d.innerHTML = "activer";
         chrome.runtime.sendMessage({
-            activer: "disable",
-            'page':'content'
-        }, typeButtonLoupe);
+            audio: "disable",
+            'page':'contentAudio'
+        }, typeButtonAudio);
     }else{
         ACTIVE_LOUPE = true;
         d.className = "btn btn-danger";
         d.innerHTML = "désactiver";
          chrome.runtime.sendMessage({
-            activer: "enable",
-            'page':'content'
-        }, typeButtonLoupe);
+            audio: "enable",
+            'page':'contentAudio'
+        }, typeButtonAudio);
      
     }
  
 }
 
-
 chrome.runtime.sendMessage({
-    activer: "show",
-    'page':'content'
-}, typeButtonLoupe);
+    audio: "show",
+    'page':'contentAudio'
+}, typeButtonAudio);
 
 $( document ).ready(function() {
-    $( "#btnEiusVidenLoupe" ).bind( "click", function() {
-        activeLoupe();
+    $( "#btnEiusVidenAudio" ).bind( "click", function() {
+        activeAudio();
     });
 });
-
