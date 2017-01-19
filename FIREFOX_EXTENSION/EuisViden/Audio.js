@@ -1,13 +1,14 @@
-/*
-created by maxim
+/**
+ * Created by maxim on 17/01/2017.
+ 
 */
-function speak(text, callback) {
+
+function speak(text, callback){
     //speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance();
     u.text = text;
     u.lang ='fr-FR';
-    
-  
+
     u.onend = function () {
         if (callback) {
             callback();
@@ -19,20 +20,20 @@ function speak(text, callback) {
         }
     };
     speechSynthesis.speak(u);
-    console.log(navigator.userAgent);
-    if(navigator.userAgent.indexOf('CHROME')>1) speechSynthesis.cancel();
+    speechSynthesis.cancel();
+
 }
 
-var elemts = document.body.childNodes;
-var texts = "";
-for (var i = 0; i < elemts.length; i++) {
-    if (elemts[i].nodeName != "SCRIPT" && elemts[i].nodeName != "#text" && elemts[i].nodeName != "INPUT") {
-        texts += elemts[i].textContent;
-        elemts[i].onclick=speak(elemts[i].textContent);
-    }
-}
-console.log(texts);
-speak(texts);
+// var elemts = document.body.childNodes;
+// var texts = "";
+// for (var i = 0; i < elemts.length; i++) {
+//     if (elemts[i].nodeName != "SCRIPT" && elemts[i].nodeName != "#text" && elemts[i].nodeName != "INPUT") {
+//         texts += elemts[i].textContent;
+//         elemts[i].onclick=speak(elemts[i].textContent);
+//     }
+// }
+// console.log(texts);
+// speak(texts);
 
 
 
@@ -53,4 +54,4 @@ u.onend = function (event) {
     console.log((t / 1000) + " seconds");
 };
 
-speechSynthesis.speak(u);*/
+speechSynthesis.speak(u);

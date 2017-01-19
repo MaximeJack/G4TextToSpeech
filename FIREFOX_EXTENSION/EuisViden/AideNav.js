@@ -3,6 +3,27 @@
  
 */
 
+function speak(text, callback){
+    //speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance();
+    u.text = text;
+    u.lang ='fr-FR';
+
+    u.onend = function () {
+        if (callback) {
+            callback();
+        }
+    };
+    u.onerror = function (e) {
+        if (callback) {
+            callback(e);
+        }
+    };
+    speechSynthesis.speak(u);
+    //speechSynthesis.cancel();
+
+}
+
 var IndexSelectionSite = -1;
 var tabResultRechecheNom = new Array();
 var tabResultRechecheURL = new Array();
@@ -17,31 +38,15 @@ console.log(IsGoogle + " : " +IsFisrtPage );
 
 if (IsGoogle && IsFisrtPage) {
 	AffichePrompt();
+
 }
 if (IsGoogle && !IsFisrtPage) {
+
 	speak('Pour lancer une nouvelle recherche appuyer sur F2');
 	GetRes();
 	AfficheRES();
 }
 
-function AffichePrompt(){
-	speak("Recherche google !");
-	var rech = prompt('Recherche sur Google ?');
-	console.log(rech);
-	if(rech != "" && rech != null){
-		speak("Votre recherche est : " + rech +"Entrer pour valider ou echap pour quitter");
-		var verif = confirm('Confirmer ?');
-
-		if(verif){
-			window.location.href = 'https://www.google.fr/search?q='+rech;
-		}
-	}else{
-		speak("Modifier votre recherche ? Appuyer sur Entrer pour valider ou echap pour quitter")
-		if(confirm('Confirmer ?')){
-			AffichePrompt();		
-		}
-	}
-}
 
 
 function raccourci() {
@@ -59,6 +64,25 @@ function raccourci() {
 		if (e.keyCode == 38) {/*fleche du haut*/SelectionSite(-1); LireNomSite();}
 		//Valide Selection Site
 		if (e.keyCode == 39) {/*F2*/ ValideSite();}
+	}
+}
+
+function AffichePrompt(){
+	speak("Recherche google !");
+	var rech = prompt('Recherche sur Google ?');
+	console.log(rech);
+	if(rech != "" && rech != null){
+		speak("Votre recherche est : " + rech +". Entrer pour valider ou echap pour quitter");
+		var verif = confirm('Confirmer ?');
+
+		if(verif){
+			window.location.href = 'https://www.google.fr/search?q='+rech;
+		}
+	}else{
+		speak("Modifier votre recherche ? Appuyer sur Entrer pour valider ou echap pour quitter");
+		if(confirm('Confirmer ?')){
+			AffichePrompt();		
+		}
 	}
 }
 
