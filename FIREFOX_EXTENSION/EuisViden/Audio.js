@@ -3,8 +3,13 @@
  
 */
 
+function StopSpeak(argument) {
+    speechSynthesis.cancel();
+}
+
 function speak(text, callback){
-    
+
+
     var u = new SpeechSynthesisUtterance();
     u.text = text;
     u.lang ='fr-FR';
@@ -20,11 +25,6 @@ function speak(text, callback){
         }
     };
     speechSynthesis.speak(u);
-
-    //bug de lecture sur chrome non resolu
-    if (navigator.userAgent.indexOf('chrome')>-1)
-        speechSynthesis.cancel();
-
 }
 
 // var elemts = document.body.childNodes;

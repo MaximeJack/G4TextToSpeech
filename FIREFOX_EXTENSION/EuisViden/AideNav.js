@@ -20,16 +20,16 @@ if (IsGoogle && IsFisrtPage) {
 
 }
 if (IsGoogle && !IsFisrtPage) {
+	StopSpeak();
 	speak('Pour lancer une nouvelle recherche appuyer sur F2');
 	GetRes();
 }
-
-
 
 function raccourci() {
 	document.onkeypress = function(e){
 		console.log(e);
 		//Retour page suivante
+		if (true) {};
 		if (e.keyCode == 33) {/*PageUp*/ javascript:history.forward();}
 		//Retour page precedente
 		if (e.keyCode == 34) {/*PageDown*/ javascript:history.back();}
@@ -40,22 +40,25 @@ function raccourci() {
 		//Selection site precedant
 		if (e.keyCode == 38) {/*fleche du haut*/SelectionSite(-1); LireNomSite();}
 		//Valide Selection Site
-		if (e.keyCode == 39) {/*F2*/ ValideSite();}
+		if (e.keyCode == 39) {/*fleche de droite*/ ValideSite();}
+		//lire la selection
+		if (e.keyCode == 39) {/*fleche de gauche*/ ValideSite();}
 	}
 }
 
 function AffichePrompt(){
+	StopSpeak();
 	speak("Recherche google !");
 	var rech = prompt('Recherche sur Google ?');
-	console.log(rech);
+	//console.log(rech);
 	if(rech != "" && rech != null){
+		StopSpeak();
 		speak("Votre recherche est : " + rech +". Entrer pour valider ou echap pour quitter");
-		var verif = confirm('Confirmer ?');
-
-		if(verif){
+		if(confirm('Confirmer ?')){
 			window.location.href = 'https://www.google.fr/search?q='+rech;
 		}
 	}else{
+		StopSpeak();
 		speak("Modifier votre recherche ? Appuyer sur Entrer pour valider ou echap pour quitter");
 		if(confirm('Confirmer ?')){
 			AffichePrompt();		
@@ -83,6 +86,7 @@ function LireNomSite(argument) {
 
 function ValideSite(argument){
 	if (IndexSelectionSite > -1) {
+		StopSpeak();
 		speak("Aller sur  : " + tabResultRechecheNom[IndexSelectionSite]+" Entrer pour valider ou echap pour quitter.");
 		if (confirm('Confirmer ?'))
 			window.location.href = tabResultRechecheURL[IndexSelectionSite];
@@ -93,12 +97,11 @@ function GetRes(argument){
 	//var res = document.body.getElementsByName('cite');
 	var res = document.body.getElementsByClassName('r');
 
-	console.log(res.length);
+	//console.log(res.length);
 	for (var i = 0; i < res.length; i++){
 		tabResultRechecheNom[i] = res[i].textContent;
 		tabResultRechecheURL[i] = res[i].firstChild.getAttribute('href');
 	}
 	IndexSelectionSite = 0;
-	LireNomSite();
 	console.log(tabResultRechecheURL);
 }
