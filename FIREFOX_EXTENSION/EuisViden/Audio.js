@@ -2,7 +2,7 @@
 created by maxim
 */
 function speak(text, callback) {
-    speechSynthesis.cancel();
+    //speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance();
     u.text = text;
     u.lang ='fr-FR';
@@ -19,6 +19,7 @@ function speak(text, callback) {
         }
     };
     speechSynthesis.speak(u);
+    speechSynthesis.cancel();
 }
 
 var elemts = document.body.childNodes;
@@ -30,7 +31,7 @@ for (var i = 0; i < elemts.length; i++) {
     }
 }
 console.log(texts);
-speak('bonjour');
+speak(texts);
 
 
 
