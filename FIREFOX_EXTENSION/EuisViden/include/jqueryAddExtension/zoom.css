@@ -1,6 +1,8 @@
 .zoom-extension {
+    position:relative;
     text-decoration: none;
     display: block;
+    
     background-color:#000;
     color:#FFF;
     z-index:100000000;

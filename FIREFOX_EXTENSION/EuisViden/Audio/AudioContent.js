@@ -29,7 +29,7 @@ function explode(){
 }
 
 $( document ).ready(function() {
-    $('*').bind("click", function(event){
+    $(document).bind("click", function(event){
         if(VARIABLE_GLOBALE_AUDIO){
 
                 var target = $(event.target);
@@ -46,10 +46,10 @@ $( document ).ready(function() {
                 }
                 
                 
-
+                //event.stopPropagation()
         }
         console.log(VARIABLE_GLOBALE_AUDIO);
-        event.stopPropagation();
+        //event.stopPropagation();
     });
 });
 

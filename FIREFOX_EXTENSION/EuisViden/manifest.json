@@ -19,13 +19,17 @@
         "include/jquery/jquery.js", 
         "include/jqueryAddExtension/zoom.js", 
         "include/html2canvas/html2canvas.js", 
+        "include/bootstrap/js/bootstrap.min.js",
         "Audio.js", 
         "AideNav.js",
         "Loupe/LoupeContent.js",
         "Audio/AudioContent.js"
         
     ],
-    "css":["include/jqueryAddExtension/zoom.css"],
+    "css":[
+        "include/bootstrap/css/bootstrap.min.css",
+        "include/jqueryAddExtension/zoom.css"
+    ],
     "matches": [ "<all_urls>"]
   }],
    "permissions": [ "<all_urls>"],
@@ -33,7 +37,7 @@
   "browser_action": {
     "default_icon": "icons/border-48.png",
     "default_popup": "popup.html",
-    "default_title": "Click here!"
+    "default_title": "Cliquez ici!"
   }
 
 }
