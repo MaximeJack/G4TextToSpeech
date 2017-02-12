@@ -4,8 +4,7 @@
 */
 
 function executionAideNav(argument) {
-
-	/*Traitement*/
+	/*Initilisation*/
 	var IndexSelectionSite = -1;
 	var tabResultRechecheNom = new Array();
 	var tabResultRechecheURL = new Array();
@@ -23,7 +22,11 @@ function executionAideNav(argument) {
 		speak('Pour lancer une nouvelle recherche appuyer sur F2');
 		GetRes();
 	}
+	/*Fin de l'init*/
+}
 
+
+/* Debut Traitement */
 	function AffichePrompt(){
 		stopSpeak();
 		speak("Recherche google !");
@@ -84,6 +87,4 @@ function executionAideNav(argument) {
 		IndexSelectionSite = 0;
 		console.log(tabResultRechecheURL);
 	}
-
-	/*Fin de traitement*/
-}
+/* Fin Traitement */

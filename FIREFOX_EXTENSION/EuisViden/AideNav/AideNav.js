@@ -43,5 +43,6 @@ chrome.runtime.sendMessage({
 $( document ).ready(function() {
     $( "#btnEiusVidenAide" ).bind( "click", function() {
         activeAideNav();
+        executionAideNav();
     });
 });

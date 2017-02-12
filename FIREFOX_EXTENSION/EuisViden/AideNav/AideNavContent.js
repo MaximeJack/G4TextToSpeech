@@ -14,7 +14,6 @@ function envoieAideNav(){
 }
 
 function raccourci(){
-	console.log('test');
 	document.onkeypress = function(e){
         if(VARIABLE_GLOBALE_AIDE_NAV){
             console.log('xxx');
@@ -55,7 +54,11 @@ function raccourci(){
 }
 
 raccourci();
-executionAideNav();
+
+// if(VARIABLE_GLOBALE_AIDE_NAV){
+	
+// }
+
 envoieAideNav();
 setInterval(envoieAideNav, 500);
 
