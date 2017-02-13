@@ -42,7 +42,7 @@ function loupeModule(event){
                 //removeClassZoom();
                 var target = $(event.target);
                 if(!target.is( ".btn, .btn-default" ) && (target.is( ":input" ) || target.is( "p" )  || target.is( "cite" ) || target.is( "a" ) || target.is( "span" ) || target.is('pre') || target.is( "img" ))){
-                    var MODAL_LOUPE = "<div class='modal fade' id='myModalLoupe' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>  <div class='modal-dialog modal-lg' role='document'>    <div class='modal-content'>      <div class='modal-header'>        <h4 class='modal-title' id='myModalLabel'>Loupe</h4>      </div>      <div class='modal-body modal-body-Loupe'>"+target.html()+"</div>      <div class='modal-footer'>        <button type='button' class='btn btn-default' data-dismiss='modal'>Fermer</button>      </div>    </div>  </div></div>";
+                    var MODAL_LOUPE = "<div class='modal fade' id='myModalLoupe' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>  <div class='modal-dialog modal-lg' role='document'>    <div class='modal-content'>      <div class='modal-header'>        <h4 class='modal-title' id='myModalLabel'>Loupe</h4>      </div>      <div class='modal-body modal-body-Loupe ' style='overflow: scroll;'><h1>"+target.html()+"</h1></div>      <div class='modal-footer'>        <button type='button' class='btn btn-default' data-dismiss='modal'>Fermer</button>      </div>    </div>  </div></div>";
                     //target.addClass('zoom-extension');
                     //target.children().addClass('zoom-extension-child');
                     if($('#myModalLoupe').length>0) {
