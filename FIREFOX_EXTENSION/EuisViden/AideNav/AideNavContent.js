@@ -21,7 +21,7 @@ function envoieAideNav(){
 function raccourci(){
 	document.onkeypress = function(e){
 		console.log("key");
-		console.log(e.KeyCode);
+		console.log(e);
         if(VARIABLE_GLOBALE_AIDE_NAV){
 			//Retour page suivante
 			if (navigator.userAgent.indexOf('OPR')>-1) {//opera
@@ -38,18 +38,12 @@ function raccourci(){
 				//Affiche Prompt 
 				if (e.keyCode == 113) {/*F2*/ AffichePrompt();}
 
-				//Selection site suivant
-				// if(e.keyCode == 38){/*fleche haut*/SelectionSite(1);LireNomSite();
-				// }
-				//Selection site precedant
-				// if(e.keyCode == 40){/*fleche du bas*/SelectionSite(-1); LireNomSite();}
-
 				//Valide Selection Site
 				if (e.keyCode == 39) {/*fleche de droite*/
 					if(e.ctrlKey){
 						ValideSite();
 					}else{
-						SelectionSite(1);LireNomSite();
+						SelectionSite(1); LireNomSite();
 					}
 					
 				}
