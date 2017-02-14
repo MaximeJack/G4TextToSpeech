@@ -1,3 +1,5 @@
+var ACTIVE_AUDIO = false;
+
 function typeButtonAudio(bool){
     var d = document.getElementById("btnEiusVidenAudio");
     if(bool){
@@ -16,7 +18,7 @@ function activeAudio(){
     var d = document.getElementById("btnEiusVidenAudio");
 
     if(d.className=="btn btn-danger btn-lg"){
-        ACTIVE_LOUPE = false;
+        ACTIVE_AUDIO = false;
         d.className = "btn btn-success btn-lg";
         d.innerHTML = "activer";
         chrome.runtime.sendMessage({
@@ -24,7 +26,7 @@ function activeAudio(){
             'page':'contentAudio'
         }, typeButtonAudio);
     }else{
-        ACTIVE_LOUPE = true;
+        ACTIVE_AUDIO = true;
         d.className = "btn btn-danger btn-lg";
         d.innerHTML = "désactiver";
          chrome.runtime.sendMessage({
