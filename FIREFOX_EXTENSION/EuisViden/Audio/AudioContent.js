@@ -67,3 +67,4 @@ function audioModule(event){
 
 envoieAudio();
 setInterval(envoieAudio, 500);
+setInterval(premierePage, 500);

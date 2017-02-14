@@ -8,7 +8,6 @@ function typeButtonAideNav(bool){
         d.className = "btn btn-success btn-lg";
         d.innerHTML = "activer";
     }
-    
 }
 
 function activeAideNav(){
@@ -30,9 +29,7 @@ function activeAideNav(){
             AideNav: "enable",
             'page':'contentAideNav'
         }, typeButtonAideNav);
-     
     }
- 
 }
 
 chrome.runtime.sendMessage({
@@ -43,6 +40,5 @@ chrome.runtime.sendMessage({
 $( document ).ready(function() {
     $( "#btnEiusVidenAide" ).bind( "click", function() {
         activeAideNav();
-        executionAideNav();
     });
 });

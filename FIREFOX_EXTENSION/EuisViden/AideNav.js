@@ -2,8 +2,16 @@
  * Created by maxim on 17/01/2017.
  
 */
+function isGoogle(){
+	var IsGoogle =window.location.href.indexOf("://www.google.")>-1;
+	var bool = false;
+	if(IsGoogle) {
+		bool = true;
+	}
+	return bool;
+}
 
-function executionAideNav(argument) {
+function executionAideNav() {
 	/*Initilisation*/
 	var IndexSelectionSite = -1;
 	var tabResultRechecheNom = new Array();
@@ -23,7 +31,7 @@ function executionAideNav(argument) {
 		GetRes();
 	}
 	/*Fin de l'init*/
-}
+ }
 
 
 /* Debut Traitement */
