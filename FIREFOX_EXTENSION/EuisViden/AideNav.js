@@ -2,6 +2,11 @@
  * Created by maxim on 17/01/2017.
  
 */
+var GLOBALE_INDEX_RECHECHE = -1;
+var GLOBALE_TAB_RECHERCHE_NOM = new Array();
+var GLOBALE_TAB_RECHERCHE_URL = new Array();
+
+
 function isGoogle(){
 	var IsGoogle =window.location.href.indexOf("://www.google.")>-1;
 	var bool = false;
@@ -13,12 +18,8 @@ function isGoogle(){
 
 function executionAideNav() {
 	/*Initilisation*/
-	var IndexSelectionSite = -1;
-	var tabResultRechecheNom = new Array();
-	var tabResultRechecheURL = new Array();
 
-
-	var IsGoogle =window.location.href.indexOf("://www.google.")>-1;
+	var IsGoogle = window.location.href.indexOf("://www.google.")>-1;
 	var IsFisrtPage = (window.location.href.indexOf("#q=") < 0) && (window.location.href.indexOf("?q=") < 0);
 
 	if (IsGoogle && IsFisrtPage) {
@@ -56,30 +57,30 @@ function executionAideNav() {
 	}
 
 	function SelectionSite(val) {
-		console.log(val+' - '+tabResultRechecheURL.length);
-		IndexSelectionSite+=val;
-		if (IndexSelectionSite > tabResultRechecheURL.length-1){
-				IndexSelectionSite = 0;
+		console.log(val+' - '+GLOBALE_TAB_RECHERCHE_URL.length);
+		GLOBALE_INDEX_RECHECHE+=val;
+		if (GLOBALE_INDEX_RECHECHE > GLOBALE_TAB_RECHERCHE_URL.length-1){
+				GLOBALE_INDEX_RECHECHE = 0;
 			}
-		if (IndexSelectionSite < 0){
-				IndexSelectionSite = tabResultRechecheURL.length-1;
+		if (GLOBALE_INDEX_RECHECHE < 0){
+				GLOBALE_INDEX_RECHECHE = GLOBALE_TAB_RECHERCHE_URL.length-1;
 			}
 	}
 
 	function LireNomSite(argument) {
-		if (IndexSelectionSite > -1) {
+		if (GLOBALE_INDEX_RECHECHE > -1) {
 			stopSpeak();
-			console.log(tabResultRechecheURL[IndexSelectionSite]);
-			speak("Site : " + tabResultRechecheNom[IndexSelectionSite]);
+			console.log(GLOBALE_TAB_RECHERCHE_URL[GLOBALE_INDEX_RECHECHE]);
+			speak("Site : " + GLOBALE_TAB_RECHERCHE_NOM[GLOBALE_INDEX_RECHECHE]);
 		}
 	}
 
 	function ValideSite(argument){
-		if (IndexSelectionSite > -1) {
+		if (GLOBALE_INDEX_RECHECHE > -1) {
 			stopSpeak();
-			speak("Aller sur  : " + tabResultRechecheNom[IndexSelectionSite]+" Entrer pour valider ou echap pour quitter.");
+			speak("Aller sur  : " + GLOBALE_TAB_RECHERCHE_NOM[GLOBALE_INDEX_RECHECHE]+" Entrer pour valider ou echap pour quitter.");
 			if (confirm('Confirmer ?'))
-				window.location.href = tabResultRechecheURL[IndexSelectionSite];
+				window.location.href = GLOBALE_TAB_RECHERCHE_URL[GLOBALE_INDEX_RECHECHE];
 		}
 	}
 
@@ -89,10 +90,10 @@ function executionAideNav() {
 
 		//console.log(res.length);
 		for (var i = 0; i < res.length; i++){
-			tabResultRechecheNom[i] = res[i].textContent;
-			tabResultRechecheURL[i] = res[i].firstChild.getAttribute('href');
+			GLOBALE_TAB_RECHERCHE_NOM[i] = res[i].textContent;
+			GLOBALE_TAB_RECHERCHE_URL[i] = res[i].firstChild.getAttribute('href');
 		}
-		IndexSelectionSite = 0;
-		console.log(tabResultRechecheURL);
+		GLOBALE_INDEX_RECHECHE = 0;
+		console.log(GLOBALE_TAB_RECHERCHE_URL);
 	}
 /* Fin Traitement */

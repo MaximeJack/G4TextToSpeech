@@ -20,6 +20,7 @@ function envoieAideNav(){
 
 function raccourci(){
 	document.onkeypress = function(e){
+		console.log("key");
 		console.log(e.KeyCode);
         if(VARIABLE_GLOBALE_AIDE_NAV){
 			//Retour page suivante
