@@ -57,7 +57,6 @@ function executionAideNav() {
 	}
 
 	function SelectionSite(val) {
-		console.log(val+' - '+GLOBALE_TAB_RECHERCHE_URL.length);
 		GLOBALE_INDEX_RECHECHE+=val;
 		if (GLOBALE_INDEX_RECHECHE > GLOBALE_TAB_RECHERCHE_URL.length-1){
 				GLOBALE_INDEX_RECHECHE = 0;
@@ -87,13 +86,14 @@ function executionAideNav() {
 	function GetRes(argument){
 		//var res = document.body.getElementsByName('cite');
 		var res = document.body.getElementsByClassName('r');
-
+		// console.log(document.body.getElementsByTagName('a'));
 		//console.log(res.length);
 		for (var i = 0; i < res.length; i++){
-			GLOBALE_TAB_RECHERCHE_NOM[i] = res[i].textContent;
-			GLOBALE_TAB_RECHERCHE_URL[i] = res[i].firstChild.getAttribute('href');
+			GLOBALE_TAB_RECHERCHE_NOM[i] = res[i].lastChild.innerHTML;
+			GLOBALE_TAB_RECHERCHE_URL[i] = res[i].lastChild.getAttribute('href');
 		}
 		GLOBALE_INDEX_RECHECHE = 0;
+		console.log(GLOBALE_TAB_RECHERCHE_NOM);
 		console.log(GLOBALE_TAB_RECHERCHE_URL);
 	}
 /* Fin Traitement */

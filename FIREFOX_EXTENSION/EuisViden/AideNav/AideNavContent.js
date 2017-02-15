@@ -20,18 +20,11 @@ function envoieAideNav(){
 
 function raccourci(){
 	document.onkeypress = function(e){
-		console.log("key");
 		console.log(e);
         if(VARIABLE_GLOBALE_AIDE_NAV){
 			//Retour page suivante
 			if (navigator.userAgent.indexOf('OPR')>-1) {//opera
 				console.log('opera');
-
-			}else if(navigator.userAgent.indexOf('Safari')>-1){//chrome
-				console.log('chrome');
-				console.log(e);
-			}else{//mozilla
-				console.log(e.KeyCode);
 				if (e.keyCode == 33) {/*PageUp*/ javascript:history.forward();}
 				//Retour page precedente
 				if (e.keyCode == 34) {/*PageDown*/ javascript:history.back();}
@@ -48,7 +41,57 @@ function raccourci(){
 					
 				}
 				//lire la selection
-				if (e.keyCode == 37) {/*fleche de gauche*/ }
+				if (e.keyCode == 37) {/*fleche de gauche*/ 
+					if(e.ctrlKey){
+						LireNomSite();
+					}else{
+						SelectionSite(-1); LireNomSite();
+					}
+				}
+
+			}else if(navigator.userAgent.indexOf('Safari')>-1){//chrome
+				console.log('chrome');
+				if (e.keyCode == 33) {/*PageUp*/ javascript:history.forward();}
+				//Retour page precedente
+				if (e.keyCode == 34) {/*PageDown*/ javascript:history.back();}
+				//Affiche Prompt 
+				if (e.keyCode == 113) {/*F2*/ AffichePrompt();}
+
+				//Valide Selection Site
+				if (e.keyCode == 39) {/*fleche de droite*/
+					if(e.ctrlKey){
+						ValideSite();
+					}else{
+						SelectionSite(1); LireNomSite();
+					}
+					
+				}
+				//lire la selection
+				if (e.keyCode == 37) {/*fleche de gauche*/ 
+					if(e.ctrlKey){
+						LireNomSite();
+					}else{
+						SelectionSite(-1); LireNomSite();
+					}
+				}
+			}else{//mozilla
+				if (e.keyCode == 33) {/*PageUp*/ javascript:history.forward();}
+				//Retour page precedente
+				if (e.keyCode == 34) {/*PageDown*/ javascript:history.back();}
+				//Affiche Prompt 
+				if (e.keyCode == 113) {/*F2*/ AffichePrompt();}
+
+				//Valide Selection Site
+				if (e.keyCode == 39) {/*fleche de droite*/
+					if(e.ctrlKey){
+						ValideSite();
+					}else{
+						SelectionSite(1); LireNomSite();
+					}
+					
+				}
+				//lire la selection
+				if (e.keyCode == 37) {/*fleche de gauche*/ 
 					if(e.ctrlKey){
 						LireNomSite();
 					}else{
@@ -58,6 +101,7 @@ function raccourci(){
 			}
 	    }
 	}
+}
 
 raccourci();
 //executionAideNav();
