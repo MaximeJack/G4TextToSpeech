@@ -29,5 +29,5 @@ function ajust(){
 }
 
 
-setInterval(envoieAjust, 500);
-setInterval(ajust, 500);
+setInterval(envoieAjust, 1500);
+setInterval(ajust, 1500);

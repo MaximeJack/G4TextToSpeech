@@ -55,7 +55,7 @@ raccourci();
 //executionAideNav();
 // if(VARIABLE_GLOBALE_AIDE_NAV){
 	
-setInterval(envoieAideNav, 500);
-setInterval(premierePage, 500);
+setInterval(envoieAideNav, 1500);
+setInterval(premierePage, 1500);
 
 
