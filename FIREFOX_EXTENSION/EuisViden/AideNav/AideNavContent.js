@@ -7,7 +7,7 @@ function setVARIABLE_GLOBALE_AIDE_NAV(i){
   
 }
 function premierePage(){
-	if(SINGLETON_INIT_NAV  && isGoogle()){
+	if(VARIABLE_GLOBALE_AIDE_NAV && SINGLETON_INIT_NAV  && isGoogle()){
   		SINGLETON_INIT_NAV = false;
   		executionAideNav();
   	}
@@ -107,8 +107,6 @@ raccourci();
 //executionAideNav();
 // if(VARIABLE_GLOBALE_AIDE_NAV){
 	
-
-envoieAideNav();
 setInterval(envoieAideNav, 500);
 setInterval(premierePage, 500);
 
